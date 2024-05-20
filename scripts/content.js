@@ -31,7 +31,6 @@ async function test() {
   if (currentIndex === answers.length || answers?.length === 0) {
     currentIndex = 0;
   }
-  console.log(">> Check | test | answers:", { answers, currentIndex });
   if (answers[currentIndex]) {
     badge.textContent = `My Dashboard ${answers[currentIndex].number}:${answers[currentIndex].answer}`;
 
@@ -39,7 +38,7 @@ async function test() {
   }
 
   async function getAnswer() {
-    const data = await fetch("http://localhost:3000/answer");
+    const data = await fetch("https://smart-guy.vercel.app/answer");
     const answers = await data.json();
 
     return answers?.result;
@@ -49,7 +48,7 @@ async function test() {
 async function action() {
   let data = handleData(document.body.innerHTML);
 
-  await fetch("http://localhost:3000/question/", {
+  await fetch("https://smart-guy.vercel.app/question/", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
