@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Reading time",
+  "version": "1.0.0",
+  "description": "Add the reading time to Chrome Extension documentation articles",
+  "action": {
+    "default_popup": "./popup/popup.html",
+    "default_icon": "./images/icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["./scripts/content.js"],
+      "matches": [
+        "https://www.onlinevarsity.com/*",
+        "https://www.npmjs.com/package/nodemon"
+      ]
+    }
+  ]
+}
