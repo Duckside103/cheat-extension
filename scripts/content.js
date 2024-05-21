@@ -1,7 +1,7 @@
 let currentIndex = 0;
 
 document.addEventListener("click", (e) => {
-  if (e.shiftKey) {
+  if (e.detail === 2) {
     action();
   }
 });
@@ -25,7 +25,6 @@ async function test() {
   target?.parentNode?.removeChild(target);
 
   const badge = document.createElement("a");
-  // Use the same styling as the publish information in an article's header
   badge.classList.add("default_t_color");
 
   if (currentIndex === answers.length || answers?.length === 0) {
